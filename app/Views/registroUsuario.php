@@ -10,9 +10,56 @@
 
     <title>REGISTRO DE USUARIO</title>
   </head>
-  <body>
-    <h1>SI MIRAS ESTO, SIGNIFICA QUE FUNCIONA</h1>
+  <body style = "background-image: url('../img/fondoPlaya.jpg'); background-size: cover;">
+    
+      <div class="container">
+        <img src="../img/logo.png" height="200px" >
+        <h2>Registro de Estudiantes</h2>
+        
+      </div>
+      <form class="contact__form container" method="post" action="mail.php">
+         
+      <!--Starting of successful form message -->
+          <div class="row">
+              <div class="col-12">
+                  <div class="alert alert-success contact__msg" style="display: none" role="alert">
+                      Your message was sent successfully.
+                  </div>
+              </div>
+          </div>
+          <!--Ending of successful form message -->
 
+          <!-- Formulario registro-->
+          <div class="row">
+              <div class="col-md-6 form-group">
+                  <input name="nombre" type="text" class="form-control" placeholder="Nombre Completo" required>
+              </div>
+              <div class="col-md-6 form-group">
+                  <select name="actividad" type="text" class="form-control" required>
+                  <option selected>Actividad a Realizar</option>
+                  <option value="1">Residencias</option>
+                  <option value="2">Servicio Social</option>
+                  <option value="3">Estadias Profesionales</option>
+
+                  </select>
+              </div>
+              <div class="col-md-6 form-group">
+                <input name="correo" type="email" class="form-control" placeholder="Correo Electrónico" required>
+              </div>
+              <div class="col-md-6 form-group">
+                  <input name="phone" type="text" class="form-control" placeholder="Phone" required>
+              </div>
+              <div class="col-md-6 form-group">
+                  <input name="subject" type="text" class="form-control" placeholder="Subject" required>
+              </div>
+              <div class="col-12 form-group">
+                  <textarea name="message" class="form-control" rows="3" placeholder="Message" required></textarea>
+              </div>
+              <div class="col-12">
+                  <input name="submit" type="submit" class="btn btn-success" value="Send Message">
+              </div>
+          </div>
+      </form>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
