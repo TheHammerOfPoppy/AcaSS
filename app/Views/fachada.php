@@ -10,9 +10,10 @@
 
     <title>ACAPULCO</title>
   </head>
-  <body>
-    <div style = "background-image: url('/img/fondoPlaya.jpg); background-size: cover; background-position: top center;">
-    <h1 align = 'center'>Estas en la pagina del Servicio Social de Acapulco</h1>
+  <body style = "background-image: url('../img/fondoPlaya.jpg'); background-size: cover;">
+  <div >
+    <div>
+    <h1 align = 'center' style = "background-color:#D16C60">Estas en la pagina del Servicio Social de Acapulco</h1>
     <div class = "container">
         <div class="row">
             <div class="col-sm-4"></div>
@@ -34,7 +35,10 @@
                 <br>
                 <br>
                 <br>
-                <button class="btn btn-primary" style = "background-color:#A1E4EC">REGISTRASE</button>
+                <br>
+                <br>
+                <br>
+                <button class="btn btn-primary" style = "background-color:#D16C60">REGISTRASE</button>
 
                 </form>
             </div>
@@ -46,5 +50,6 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     </div>
+  </div>
   </body>
 </html>

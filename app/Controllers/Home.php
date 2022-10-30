@@ -4,17 +4,17 @@
 
 class Home extends BaseController
 {
-    public function index()
+    public function index() //PAGINA PRINCIPAL
     {
         $mensaje = session('mensaje');
         return view('fachada', ["mensaje" => $mensaje]);
     }
-    public function inicioSesion()
+    public function inicioSesion() //NOS MANDA AL LOGIN PARA INICIAR SESION
     {
         $mensaje = session('mensaje');
         return view('login', ["mensaje" => $mensaje]);
     }
-    public function registroUsuario()
+    public function registroUsuario() //NOS MANDA DONDE EL FORMULARIO PARA REGISTRO DE USUARIO
     {
         $mensaje = session('mensaje');
         return view('registroUsuario', ["mensaje" => $mensaje]);
@@ -22,7 +22,8 @@ class Home extends BaseController
     public function inicio(){
         return view('inicio');
     }
-    public function login(){
+    public function login() // NOS PERMITE VALIDAR SI EL USUARIO EXISTE PARA PODER INGRESAR A LA PAGINA DE INICIO
+    {
         $usuario = $this->request->getPost('usuario');
         $password = $this->request->getPost('password');
         $Usuario = new Usuarios();
@@ -43,7 +44,8 @@ class Home extends BaseController
             return redirect()->to(base_url('/'))->with('mensaje','0');
         }
     }
-    public function salir(){
+    public function salir() //NOS PERMITE CERRAR SESION
+    {
         $session = session();
         $session->destroy();
         return redirect()->to(base_url('/'));

@@ -24,7 +24,7 @@ class App extends BaseConfig
      *
      * @var string
      */
-    public $baseURL = 'http://localhost/canal/codeigniter/login/public/';
+    public $baseURL = 'http://localhost/AcaSS/login/public/';
 
     /**
      * --------------------------------------------------------------------------
