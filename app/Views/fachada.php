@@ -29,7 +29,7 @@
                 <br>
                 <br>
                 <br>
-                <button class="btn btn-primary" style = "background-color:#D16C60">INICIAR SESION</button>
+                <button class="btn btn-primary" style = "background-color:#A02C2C">INICIAR SESION</button>
                 </form>
                 <form action="<?php echo base_url('/registroUsuario') ?>" method="POST">
                 <br>
@@ -38,7 +38,7 @@
                 <br>
                 <br>
                 <br>
-                <button class="btn btn-primary" style = "background-color:#D16C60">REGISTRASE</button>
+                <button class="btn btn-primary" style = "background-color:#A02C2C">REGISTRASE</button>
 
                 </form>
             </div>
