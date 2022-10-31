@@ -16,13 +16,7 @@
       <div class="container">
         
       <img src="../img/logo.png" height="100px" >
-
-  <body style = "background-image: url('../img/fondoPlaya.jpg'); background-size: cover;">
-    
       <div class="container">
-        <img src="../img/logo.png" height="200px" >
-        <h2>Registro de Estudiantes</h2>
-        
       </div>
       <form class="contact__form container" method="post" action="mail.php">
          
@@ -73,17 +67,6 @@
               </div>
           </div>
           </div>
-                  <input name="phone" type="text" class="form-control" placeholder="Phone" required>
-              </div>
-              <div class="col-md-6 form-group">
-                  <input name="subject" type="text" class="form-control" placeholder="Subject" required>
-              </div>
-              <div class="col-12 form-group">
-                  <textarea name="message" class="form-control" rows="3" placeholder="Message" required></textarea>
-              </div>
-              <div class="col-12">
-                  <input name="submit" type="submit" class="btn btn-success" value="Send Message">
-              </div>
           </div>
       </form>
     <!-- Optional JavaScript -->
