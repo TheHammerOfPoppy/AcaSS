@@ -10,9 +10,62 @@
 
     <title>REGISTRO DE USUARIO</title>
   </head>
-  <body>
-    <h1>SI MIRAS ESTO, SIGNIFICA QUE FUNCIONA</h1>
+  <body style = "background-image: url('../img/fondoClaro.jpg'); background-size: cover;">
+    
+      <div class="container">
+        
+      <img src="../img/logo.png" height="100px" >
+        
+      </div>
+      <form class="contact__form container" method="post" action="mail.php">
+         
+      <!--Starting of successful form message -->
+          <div class="row">
+              <div class="col-12">
+                  <div class="alert alert-success contact__msg" style="display: none" role="alert">
+                      Tu informacion se mando con exito.
+                  </div>
+              </div>
+          </div>
+          <!--Ending of successful form message -->
 
+          <!-- Formulario registro-->
+          <div class="card text-bg-light mb-3"">
+            <div class="card-header"><h2 class=" text-center">Registro de Estudiantes</h2></div>
+            <div class="card-body">
+            <div class="row">
+              <div class="col-md-6 form-group">
+                  <input name="nombre" type="text" class="form-control" placeholder="Nombre Completo" required>
+              </div>
+              <div class="col-md-6 form-group">
+                  <select name="actividad" type="text" class="form-control" required>
+                  <option selected>Actividad a Realizar</option>
+                  <option value="1">Residencias</option>
+                  <option value="2">Servicio Social</option>
+                  <option value="3">Estadias Profesionales</option>
+
+                  </select>
+              </div>
+              <div class="col-md-6 form-group">
+                <input name="correo" type="email" class="form-control" placeholder="Correo Electrónico" required>
+              </div>
+              <div class="col-md-6 form-group">
+                  <input name="phone" type="text" class="form-control" placeholder="Telefono celular" required>
+              </div>
+              <div class="col-md-6 form-group">
+                  <input name="subject" type="password" class="form-control" placeholder="Contraseña" required>
+              </div>
+              <div class="col-12 form-group">
+                  <textarea name="message" class="form-control" rows="3" placeholder="Explica cual sera tu actividad que desempeñaras" required></textarea>
+              </div>
+              <div class="col-12">
+                  <input name="submit" type="submit" class="btn btn-dark" value="Registrarse">
+                  <a href="<?php echo base_url('/inicioSesion')?>" class="btn btn-link">¿Ya estas registrado? Inicia sesion!</button>
+              </div>
+          </div>
+          </div>
+          
+      </form>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

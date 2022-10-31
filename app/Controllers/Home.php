@@ -4,6 +4,9 @@
 
 class Home extends BaseController
 {
+    public function construct(){
+        helper('url');
+    }
     public function index() //PAGINA PRINCIPAL
     {
         $mensaje = session('mensaje');
@@ -49,5 +52,11 @@ class Home extends BaseController
         $session = session();
         $session->destroy();
         return redirect()->to(base_url('/'));
+    }
+
+    public function perfil() //PAGINA PRINCIPAL
+    {
+        $mensaje = session('mensaje');
+        return view('perfil', ["mensaje" => $mensaje]);
     }
 }

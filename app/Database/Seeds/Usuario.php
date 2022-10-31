@@ -8,8 +8,8 @@ class Usuario extends Seeder
 {
     public function run()
     {
-        $usuario = "admin";
-        $password = password_hash("123", PASSWORD_DEFAULT);
+        $usuario = "8324";
+        $password = password_hash("2402", PASSWORD_DEFAULT);
         $type = "admin";
         
         $data = [

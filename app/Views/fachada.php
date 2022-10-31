@@ -11,38 +11,32 @@
     <title>ACAPULCO</title>
   </head>
   <body style = "background-image: url('../img/fondoPlaya.jpg'); background-size: cover;">
-  <div >
+  <div>
     <div>
-    <h1 align = 'center' style = "background-color:#D16C60">Estas en la pagina del Servicio Social de Acapulco</h1>
+    <h1 align = 'center' style = "background-color:#FFFFFF">Estas en la pagina del Servicio Social de Acapulco</h1>
     <div class = "container">
         <div class="row">
-            <div class="col-sm-4"></div>
-            <div class="col-sm-4">
-                <form action="<?php echo base_url('/inicioSesion') ?>" method="POST">
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <button class="btn btn-primary" style = "background-color:#A02C2C">INICIAR SESION</button>
-                </form>
-                <form action="<?php echo base_url('/registroUsuario') ?>" method="POST">
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <button class="btn btn-primary" style = "background-color:#A02C2C">REGISTRASE</button>
-
-                </form>
+        <div class=" col-xxl-7 col-lg-7 col-md-8 col-sm-12 pt-5 mt-5">
+            <div class="card text-bg-danger mb-3">
+            <div class="card-header text-center"><H1>SERVICIO SOCIAL DE ACAPULCO</H1></div>
+            <div class="card-body">
+            <div class="text-center">
+                <img src="https://acapulco.gob.mx/wp-content/themes/haca_v3/img/Acapulco_f2124.png" class="rounded" alt="Acapulco">
             </div>
-            <div class="col-sm-4"></div>
+            <form action="<?php echo base_url('/inicioSesion') ?>" method="POST">
+                <button type="submit" class="btn btn-primary" style ="background-color:#A02C2C" name="boton" value="iniciar">INICIAR SESION</button>
+                
+            </form>
+            <div style = "text-align: center">
+            <form action="<?php echo base_url('/registroUsuario') ?>" method="POST">
+                <button type="submit" class="btn btn-primary" style ="background-color:#A02C2C" name="boton" value="registrar">REGISTRASE</button>
+            </form>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
         </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
