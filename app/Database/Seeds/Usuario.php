@@ -8,17 +8,15 @@ class Usuario extends Seeder
 {
     public function run()
     {
-        $usuario = "8324";
-        $password = password_hash("2402", PASSWORD_DEFAULT);
+        $password = password_hash("1234",PASSWORD_DEFAULT);
+        $usuario = "8320";
         $type = "admin";
-        
         $data = [
             'usuario' => $usuario,
             'password'    => $password,
-            'type' => $type
+            'type'    => $type
         ];
 
-        // Using Query Builder
         $this->db->table('t_usuarios')->insert($data);
     }
 }
