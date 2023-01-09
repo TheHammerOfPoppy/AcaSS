@@ -18,7 +18,9 @@
         <div class="row">
         <div class=" col-xxl-7 col-lg-7 col-md-8 col-sm-12 pt-5 mt-5">
             <div class="card text-bg-danger mb-3">
+
             <div class="card-header text-center"><H1>SS Ayuntamiento</H1></div>
+
             <div class="card-body">
             <div class="text-center">
                 <img src="https://acapulco.gob.mx/wp-content/themes/haca_v3/img/Acapulco_f2124.png" class="rounded" alt="Acapulco">
