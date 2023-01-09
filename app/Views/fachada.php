@@ -23,13 +23,10 @@
             <div class="text-center">
                 <img src="https://acapulco.gob.mx/wp-content/themes/haca_v3/img/Acapulco_f2124.png" class="rounded" alt="Acapulco">
             </div>
+            <div style = "text-align: center">
             <form action="<?php echo base_url('/inicioSesion') ?>" method="POST">
                 <button type="submit" class="btn btn-primary" style ="background-color:#A02C2C" name="boton" value="iniciar">INICIAR SESION</button>
-                
-            </form>
-            <div style = "text-align: center">
-            <form action="<?php echo base_url('/registroUsuario') ?>" method="POST">
-                <button type="submit" class="btn btn-primary" style ="background-color:#A02C2C" name="boton" value="registrar">REGISTRASE</button>
+                <a href="<?php echo base_url('/registroUsuario')?>" class="btn btn-link">¿No estas registrado? Registrate!</button>
             </form>
             </div>
             </div>

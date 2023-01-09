@@ -25,6 +25,8 @@ class Home extends BaseController
     public function inicio(){
         return view('inicio');
     }
+    
+    
     public function login() // NOS PERMITE VALIDAR SI EL USUARIO EXISTE PARA PODER INGRESAR A LA PAGINA DE INICIO
     {
         $usuario = $this->request->getPost('usuario');
@@ -47,6 +49,8 @@ class Home extends BaseController
             return redirect()->to(base_url('/'))->with('mensaje','0');
         }
     }
+    
+    
     public function salir() //NOS PERMITE CERRAR SESION
     {
         $session = session();
@@ -54,6 +58,8 @@ class Home extends BaseController
         return redirect()->to(base_url('/'));
     }
 
+    
+    
     public function perfil() //PAGINA PRINCIPAL
     {
         $mensaje = session('mensaje');
