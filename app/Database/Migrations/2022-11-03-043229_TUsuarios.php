@@ -34,7 +34,7 @@ class TUsuarios extends Migration
 
     public function down()
     {
-        $this->forge->dropTable('t_suuarios');
+        $this->forge->dropTable('t_usuarios');
     }
 
 }
