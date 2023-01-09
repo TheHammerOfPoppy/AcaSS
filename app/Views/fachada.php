@@ -19,7 +19,7 @@
         <div class=" col-xxl-7 col-lg-7 col-md-8 col-sm-12 pt-5 mt-5">
             <div class="card text-bg-danger mb-3">
 
-            <div class="card-header text-center"><H1>SS Ayuntamiento</H1></div>
+            <div class="card-header text-center"><H1>SERVICIO SOCIAL DEL AYUNTAMIENTO</H1></div>
 
             <div class="card-body">
             <div class="text-center">
