@@ -27,7 +27,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="<?php echo base_url('/perfil') ?>">Perfil</a>
-          <a class="dropdown-item" href="#">Archivos</a>
+          <a class="dropdown-item" href="<?php echo base_url('/archivos') ?>">Archivos</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="<?php echo base_url('/salir') ?>">Cerrar sesion</a>
         </div>
@@ -53,14 +53,16 @@
 			  
                 <div class="col-md-3 col-lg-3 " align="center"> 
 				<div id="load_img">
-					<img class="img-responsive" alt="Logo">
+        <img id="img" alt="Logo" width="150" height="500">
 					
 				</div>
 				<br>				
 					<div class="row">
   						<div class="col-md-12">
 							<div class="form-group">
-								<input class='filestyle' data-buttonText="Logo" type="file" name="imagefile" id="imagefile" onchange="upload_image();">
+                <input type="file" id="file" accept="image/*" onchange="mostrar()"/>
+                <br>
+                
 							</div>
 						</div>
 						
@@ -71,41 +73,41 @@
                     <tbody>
                       <tr>
                         <td class='col-md-3'>Nombres y Apellidos:</td>
-                        <td><input type="text" class="form-control input-sm" name="nombre_apellido"  required></td>
+                        <td><input type="text" class="form-control input-sm" name="nombre_apellido" value='<?php echo session('nomApe');?>'></td>
                       </tr>
                       <tr>
                         <td>Ocupación:</td>
-                        <td><input type="text" class="form-control input-sm" name="ocupacion"  required></td>
+                        <td><input type="text" class="form-control input-sm" name="ocupacion"  value='<?php echo session('ocupacion');?>'></td>
                       </tr>
                       <tr>
                         <td>Correo electrónico:</td>
-                        <td><input type="email" class="form-control input-sm" name="correo"  ></td>
+                        <td><input type="email" class="form-control input-sm" name="correo" value='<?php echo session('email');?>'></td>
                       </tr>
 					  <tr>
                         <td>Telefono:</td>
-                        <td><input type="text" class="form-control input-sm" required name="telefono" ></td>
+                        <td><input type="text" class="form-control input-sm" required name="telefono" value='<?php echo session('tel');?>'></td>
                       </tr>
 
                       <tr>
                         <td>Asesor:</td>
-                        <td><input type="text" class="form-control input-sm" required name="asesor" "></td>
+                        <td><input type="text" class="form-control input-sm" required name="asesor" value='<?php echo session('asesor');?>'></td>
                       </tr>
 
 					  <tr>
                         <td>Departamento:</td>
-                        <td><input type="text" class="form-control input-sm" name="departamento"  required></td>
+                        <td><input type="text" class="form-control input-sm" name="departamento" value='<?php echo session('depart');?>'></td>
                       </tr>
 					  <tr>
                         <td>Ciudad:</td>
-                        <td><input type="text" class="form-control input-sm" name="ciudad"  required></td>
+                        <td><input type="text" class="form-control input-sm" name="ciudad" value='<?php echo session('ciudad');?>'></td>
                       </tr>
 					  <tr>
                         <td>Codigo Postal:</td>
-                        <td><input type="text" class="form-control input-sm" name="codigo_postal" ></td>
+                        <td><input type="text" class="form-control input-sm" name="codigo_postal" value='<?php echo session('codPos');?>'></td>
                       </tr>
 					  <tr>
                         <td>Institucion donde estudia</td>
-                        <td><input type="text" class="form-control input-sm" name="institucion" ></td>
+                        <td><input type="text" class="form-control input-sm" name="institucion" value='<?php echo session('instEst');?>'></td>
                       </tr>
                    
                         
@@ -146,63 +148,16 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>
 </html>
-<script type="text/javascript" src="js/bootstrap-filestyle.js"> </script>
 
 <script>
-$( "#perfil" ).submit(function( event ) {
-  $('.guardar_datos').attr("disabled", true);
-  
- var parametros = $(this).serialize();
-	 $.ajax({
-			type: "POST",
-			url: "ajax/editar_perfil.php",
-			data: parametros,
-			 beforeSend: function(objeto){
-				$("#resultados_ajax").html("Mensaje: Cargando...");
-			  },
-			success: function(datos){
-			$("#resultados_ajax").html(datos);
-			$('.guardar_datos').attr("disabled", false);
-
-		  }
-	});
-  event.preventDefault();
-})
-
-
-
-
-
-		
+function mostrar(){
+  var archivo = document.getElementById("file").files[0];
+  var reader = new FileReader();
+  if (file) {
+    reader.readAsDataURL(archivo );
+    reader.onloadend = function () {
+      document.getElementById("img").src = reader.result;
+    }
+  }
+}
 </script>
-
-<script>
-		function upload_image(){
-				
-				var inputFileImage = document.getElementById("imagefile");
-				var file = inputFileImage.files[0];
-				if( (typeof file === "object") && (file !== null) )
-				{
-					$("#load_img").text('Cargando...');	
-					var data = new FormData();
-					data.append('imagefile',file);
-					
-					
-					$.ajax({
-						url: "ajax/imagen_ajax.php",        // Url to which the request is send
-						type: "POST",             // Type of request to be send, called as method
-						data: data, 			  // Data sent to server, a set of key/value pairs (i.e. form fields and values)
-						contentType: false,       // The content type used when sending data to the server.
-						cache: false,             // To unable request pages to be cached
-						processData:false,        // To send DOMDocument or non processed data file it is set to false
-						success: function(data)   // A function to be called if request succeeds
-						{
-							$("#load_img").html(data);
-							
-						}
-					});	
-				}
-				
-				
-			}
-    </script>

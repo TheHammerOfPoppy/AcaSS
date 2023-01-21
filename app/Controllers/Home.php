@@ -38,12 +38,22 @@ class Home extends BaseController
 
             $data = [
                         "usuario" => $datosUsuario[0]['usuario'],
-                        "type" => $datosUsuario[0]['type']
+                        "type" => $datosUsuario[0]['type'],
+                        "nomApe" => $datosUsuario[0]['nomApe'],
+                        "ocupacion" => $datosUsuario[0]['ocupacion'],
+                        "email" => $datosUsuario[0]['email'],
+                        "tel" => $datosUsuario[0]['tel'],
+                        "asesor" => $datosUsuario[0]['asesor'],
+                        "depart" => $datosUsuario[0]['depart'],
+                        "ciudad" => $datosUsuario[0]['ciudad'],
+                        "codPos" => $datosUsuario[0]['codPos'],
+                        "instEst" => $datosUsuario[0]['instEst']
             ];
             $session = session();
             $session->set($data);
 
-            return redirect()->to(base_url('/inicio'))->with('mensaje','1');
+                return redirect()->to(base_url('/inicio'))->with('mensaje','1');
+
         } 
         else {
             return redirect()->to(base_url('/'))->with('mensaje','0');
@@ -64,5 +74,10 @@ class Home extends BaseController
     {
         $mensaje = session('mensaje');
         return view('perfil', ["mensaje" => $mensaje]);
+    }
+
+    public function archivos() //PAGINA DE ARCHIVOS
+    {
+        return view('archivos');
     }
 }

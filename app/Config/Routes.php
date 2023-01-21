@@ -49,6 +49,9 @@ $routes->post('/registroUsuario', 'Home::registroUsuario');
 
 $routes->get('/perfil', 'Home::perfil');
 
+$routes->post('/archivos', 'Home::archivos');
+$routes->get('/archivos', 'Home::archivos');
+
 $routes->get('/salir', 'Home::salir');
 /*
  * --------------------------------------------------------------------

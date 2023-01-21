@@ -28,7 +28,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="<?php echo base_url('/perfil') ?>">Perfil</a>
-          <a class="dropdown-item" href="#">Archivos</a>
+          <a class="dropdown-item" href="<?php echo base_url('/archivos') ?>">Archivos</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="<?php echo base_url('/salir') ?>">Cerrar sesion</a>
         </div>
