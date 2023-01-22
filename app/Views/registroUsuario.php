@@ -41,12 +41,15 @@
                   <input name="nombre" type="text" class="form-control" placeholder="Nombre Completo" required>
               </div>
               <div class="col-md-6 form-group">
+                  <select name="ocupacion" type="text" class="form-control" required>
+                  <option selected>Ocupacion</option>
+                  <option value="1">Estudiante</option>
+                  </select>
+              </div>
+              <div class="col-md-6 form-group">
                   <select name="actividad" type="text" class="form-control" required>
-                  <option selected>Actividad a Realizar</option>
-                  <option value="1">Residencias</option>
-                  <option value="2">Servicio Social</option>
-                  <option value="3">Estadias Profesionales</option>
-
+                  <option selected>Tipo de puesto</option>
+                  <option value="1">Prestador</option>
                   </select>
               </div>
               <div class="col-md-6 form-group">
@@ -57,6 +60,22 @@
               </div>
               <div class="col-md-6 form-group">
                   <input name="subject" type="password" class="form-control" placeholder="Contraseña" required>
+              </div>
+              
+              <div class="col-md-6 form-group">
+                <input name="asesor" type="text" class="form-control" placeholder="Asesor" required>
+              </div>
+              <div class="col-md-6 form-group">
+                <input name="departamento" type="text" class="form-control" placeholder="Departamento" required>
+              </div>
+              <div class="col-md-6 form-group">
+                <input name="ciudad" type="text" class="form-control" placeholder="Ciudad" required>
+              </div>
+              <div class="col-md-6 form-group">
+                <input name="codigoPostal" type="text" class="form-control" placeholder="Codigo Postal" required>
+              </div>
+              <div class="col-md-6 form-group">
+                <input name="instituto" type="text" class="form-control" placeholder="Instituto" required>
               </div>
               <div class="col-12 form-group">
                   <textarea name="message" class="form-control" rows="3" placeholder="Explica cual sera tu actividad que desempeñaras" required></textarea>

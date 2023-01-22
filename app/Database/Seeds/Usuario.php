@@ -10,7 +10,7 @@ class Usuario extends Seeder
     {
         $usuario = "8024";
         $password = password_hash("2402",PASSWORD_DEFAULT);
-        $type = "prestador";
+        $type = "Prestador";
         $nombre = "Rasec Cortes Alvarado";
         $ocupa = "Estudiante";
         $email = "L17320819@acapulco.tecnm.mx";
@@ -20,7 +20,10 @@ class Usuario extends Seeder
         $ciud = "Acapulco";
         $cp = "39700";
         $insti = "Instituto Tecnologico de Acapulco";
-
+        $PDFPre = "";
+        $PDFSeg = "";
+        $PDFIden = "";
+        $FotoIn = "";
 
         $data = [
             'usuario' => $usuario,
@@ -34,7 +37,11 @@ class Usuario extends Seeder
             'depart' => $depart,
             'ciudad' => $ciud,
             'codPos'    => $cp,
-            'instEst' => $insti
+            'instEst' => $insti,
+            'PDFPresentacion' => $PDFPre,
+            'PDFSeguro' => $PDFSeg,
+            'PDFIdentificacion' => $PDFIden,
+            'FotoInd' => $FotoIn
         ];
 
         // Using Query Builder

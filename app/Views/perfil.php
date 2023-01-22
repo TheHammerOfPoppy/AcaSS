@@ -12,7 +12,7 @@
   </head>
   <body style = "background-image: url('../img/fondoClaro.jpg'); background-size: cover;">
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#"><?php echo session('usuario');?></a>
+  <a class="navbar-brand" href="<?php echo base_url('/inicio') ?>"><?php echo session('usuario');?></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -45,27 +45,21 @@
       <div class="row d-flex justify-content-center">
       <form method="post" id="perfil">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 toppad" >
-   
-   
           <div class="panel panel-success">
             <div class="panel-body">
               <div class="row">
-			  
                 <div class="col-md-3 col-lg-3 " align="center"> 
 				<div id="load_img">
-        <img id="img" alt="Logo" width="150" height="500">
-					
+        <img class="img-responsive" id="img" alt="Logo">
 				</div>
 				<br>				
 					<div class="row">
   						<div class="col-md-12">
 							<div class="form-group">
-                <input type="file" id="file" accept="image/*" onchange="mostrar()"/>
+                <input type="file" id="file" accept="image/*" onchange="mostrar();"/>
                 <br>
-                
 							</div>
 						</div>
-						
 					</div>
 				</div>
                 <div class=" col-md-9 col-lg-9 "> 
@@ -87,12 +81,10 @@
                         <td>Telefono:</td>
                         <td><input type="text" class="form-control input-sm" required name="telefono" value='<?php echo session('tel');?>'></td>
                       </tr>
-
                       <tr>
                         <td>Asesor:</td>
                         <td><input type="text" class="form-control input-sm" required name="asesor" value='<?php echo session('asesor');?>'></td>
                       </tr>
-
 					  <tr>
                         <td>Departamento:</td>
                         <td><input type="text" class="form-control input-sm" name="departamento" value='<?php echo session('depart');?>'></td>
@@ -109,26 +101,12 @@
                         <td>Institucion donde estudia</td>
                         <td><input type="text" class="form-control input-sm" name="institucion" value='<?php echo session('instEst');?>'></td>
                       </tr>
-                   
-                        
-                     
                     </tbody>
                   </table>
-                  
-                  
                 </div>
 				<div class='col-md-12' id="resultados_ajax"></div><!-- Carga los datos ajax -->
               </div>
             </div>
-                 <div class="panel-footer text-center">
-                    
-                     
-                <button type="submit" class="btn btn-sm btn-success"><i class="glyphicon glyphicon-refresh"></i> Actualizar datos</button>
-
-                       
-                       
-                    </div>
-            
           </div>
         </div>
 		</form>
@@ -136,13 +114,6 @@
         </div>
     </div>
     </div>
-    
-	
-
-	
-	<?php
-	//include("footer.php");
-	?>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -153,6 +124,7 @@
 function mostrar(){
   var archivo = document.getElementById("file").files[0];
   var reader = new FileReader();
+  
   if (file) {
     reader.readAsDataURL(archivo );
     reader.onloadend = function () {
@@ -160,4 +132,21 @@ function mostrar(){
     }
   }
 }
+    function enviarFoto() 
+    {
+      var parametros = new FormData($("#perfil")[0]);
+    $.ajax({
+      data: parametros,
+      url: "ajax/insertar_ajax.php",
+      type: "POST",
+      contentType: false,
+      processData: false,
+      beforsend: function(){
+
+      },
+      success: function(response){
+          alert(response);
+      }
+    })
+    }
 </script>

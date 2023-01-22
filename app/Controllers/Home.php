@@ -47,7 +47,11 @@ class Home extends BaseController
                         "depart" => $datosUsuario[0]['depart'],
                         "ciudad" => $datosUsuario[0]['ciudad'],
                         "codPos" => $datosUsuario[0]['codPos'],
-                        "instEst" => $datosUsuario[0]['instEst']
+                        "instEst" => $datosUsuario[0]['instEst'],
+                        "PDFPre" => $datosUsuario[0]['PDFPresentacion'],
+                        "PDFSeg" => $datosUsuario[0]['PDFSeguro'],
+                        "PDFIden" => $datosUsuario[0]['PDFIdentificacion'],
+                        "FotoIn" => $datosUsuario[0]['FotoInd']
             ];
             $session = session();
             $session->set($data);

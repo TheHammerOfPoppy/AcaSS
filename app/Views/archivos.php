@@ -12,7 +12,7 @@
   </head>
   <body style = "background-image: url('../img/fondoClaro.jpg'); background-size: cover;">
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#"><?php echo session('usuario');?></a>
+  <a class="navbar-brand" href="<?php echo base_url('/inicio') ?>"><?php echo session('usuario');?></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -42,7 +42,7 @@
         <div class="card-body">
         <div class="container">
       <div class="row d-flex justify-content-center">
-    <form action="" id="form_subir">
+    <form name="form_subir" id="form_subir" enctype="multipart/form-data" method="post">
     <table class="table table-condensed">
                     <tbody>
                       <tr>
@@ -50,22 +50,33 @@
                             <div class="form-1-2">
                                 <label for="">CARTA DE PRESENTACION: </label>
                                 <input type="file" id="arch" onchange="return validarExt()" required>
+                                <input type="submit" class="btn btn-sm btn-success" value="Enviar" onclick="enviarPDF();">
                             </div>
                         </td>
                       </tr>
+</form>
+<form name="form_subir1" id="form_subir1" enctype="multipart/form-data" method="post">
+    <table class="table table-condensed">
+                    <tbody>
                       <tr>
                       <td>
                             <div class="form-1-2">
-                                <label for="">CARTILLA DE SALUD: </label>
+                                <label for="">NUMERO DE SEGURO SOCIAL: </label>
                                 <input type="file" id="arch1" onchange="return validarExt1()" required>
+                                <input type="submit" class="btn btn-sm btn-success" value="Enviar" onclick="enviarPDF();">
                             </div>
                         </td>
                       </tr>
+</form>
+<form name="form_subir2" id="form_subir2" enctype="multipart/form-data" method="post">
+    <table class="table table-condensed">
+                    <tbody>
                       <tr>
                       <td>
                             <div class="form-1-2">
                                 <label for="">IDENTIFICACION: </label>
                                 <input type="file" id="arch2" onchange="return validarExt2()" required>
+                                <input type="submit" class="btn btn-sm btn-success" value="Enviar" onclick="enviarPDF();">
                             </div>
                         </td>
                       </tr>
@@ -76,17 +87,12 @@
                 <span></span>
             </div>
         </div>
-        <div class="acciones panel-footer text-center">
-            <input type="submit" class="btn btn-sm btn-success" value="Enviar">
-            <input type="button" class="btn btn-sm btn-success" id="cancelar" value="Cancelar">
-        </div>
     </form>
 </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="js/document.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>
 </html>
@@ -99,7 +105,7 @@
         var extPermitidas = /(.pdf)$/i;
         if(!extPermitidas.exec(archivoRuta))
         {
-            alert('Solo se aceptan archivod PDF');
+            alert('Solo se aceptan archivos PDF');
             arch.value='';
             return false;
         }
@@ -112,7 +118,7 @@
         var extPermitidas1 = /(.pdf)$/i;
         if(!extPermitidas1.exec(archivoRuta1))
         {
-            alert('Solo se aceptan archivod PDF');
+            alert('Solo se aceptan archivos PDF');
             arch1.value='';
             return false;
         }
@@ -125,9 +131,28 @@
         var extPermitidas2 = /(.pdf)$/i;
         if(!extPermitidas2.exec(archivoRuta2))
         {
-            alert('Solo se aceptan archivod PDF');
+            alert('Solo se aceptan archivos PDF');
             arch2.value='';
             return false;
         }
+    }
+    
+    function enviarPDF() 
+    {
+    var parametros = new FormData($("#form_subir")[0]);
+    $.ajax({
+      data: parametros,
+      url: "ajax/insertar_ajax.php",
+      type: "POST",
+      contentType: false,
+      processData: false,
+      beforsend: function(){
+
+      },
+      success: function(response){
+          alert(response);
+      }
+    })
+
     }
 </script>

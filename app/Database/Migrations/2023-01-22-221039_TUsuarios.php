@@ -63,6 +63,22 @@ class TUsuarios extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
+            'PDFPresentacion' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '255',
+            ],
+            'PDFSeguro' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '255',
+            ],
+            'PDFIdentificacion' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '255',
+            ],
+            'FotoInd' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '255',
+            ],
         ]);
         $this->forge->addKey('id_usuario', true);
         $this->forge->createTable('t_usuarios');
